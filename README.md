@@ -1,38 +1,55 @@
-# datastax-example-template
+# Using the Object Mapper in Node.js
 This example demonstrates how to use the object mapper in Node.js to insert and retrieve data from a Cassandra cluster.
 
 Contributors: [Jorge Bay Gondra](https://github.com/jorgebay) and [Andrew Tolbert](https://github.com/tolbertam), copied from [here](https://github.com/datastax/nodejs-driver/blob/master/examples/mapper/mapper-insert-retrieve.js)
 
 ## Objectives
 
-* To demonstrate how to insert and retrieve data using the object mapper described in the documentation [here](https://docs.datastax.com/en/developer/nodejs-driver/4.3/features/mapper/)
+* To provides a singlular example of how to insert and retrieve data using the object mapper described in the documentation [here](https://docs.datastax.com/en/developer/nodejs-driver/4.3/features/mapper/)
   
 ## Project Layout
 
 * app.js - The main application file which contains the example code for using the object mapper
 
 ## How this Sample Works
-A description of how this sample works and how it demonstrates the objectives outlined above
+This example starts by first, creating a mapper instance that maps three tables in the `examples` keyspace.
+* `users`
+* `user_videos`
+* `latest_videos`   
+
+
 
 ## Setup and Running
 
 ### Prerequisites
-The prerequisites required for this application to run
 
-e.g.
-* NodeJs version 8
-* A DSE 6.7 Cluster
-* Schema added to the cluster
+* Node.Js version 8
+* A Cassandra cluster with the connection information
+
+**Note** This application defaults to connecting to a cluster on localhost with a local data center of `dc1`.  These parameters can be changed on line 6 of [app.js](app.js).
 
 ### Running
-The steps and configuration needed to run and build this application
-
-e.g.
 To run this application use the following command:
 
 `node app.js`
 
 This will produce the following output:
 
-`Connected to cluster with 3 host(s) ["XX.XX.XX.136:9042","XX.XX.XX.137:9042","XX.XX.XX.138:9042"]`
+```
+--Obtained video by id
+ { videoId: Uuid: 31ff5550-da75-47f4-8b41-926512f74691,
+  addedDate: 2019-11-06T22:47:00.369Z,
+  description: 'My desc',
+  location: null,
+  locationType: null,
+  name: 'My video',
+  previewThumbnails: null,
+  tags: null,
+  userId: Uuid: 7cd9f42f-6a37-42b6-a8d6-08c6ecdbf75f }
+--Obtained video by user id
+ { userId: Uuid: 7cd9f42f-6a37-42b6-a8d6-08c6ecdbf75f,
+  addedDate: 2019-11-06T22:47:00.369Z,
+  videoId: Uuid: 31ff5550-da75-47f4-8b41-926512f74691,
+  name: 'My video',
+  previewImageLocation: null }```
 
