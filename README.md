@@ -1,22 +1,15 @@
 # datastax-example-template
-A short few sentences describing what is the purpose of the example and what the user will learn
+This example demonstrates how to use the object mapper in Node.js to insert and retrieve data from a Cassandra cluster.
 
-e.g.
-This application shows how to use configure your NodeJs application to connect to DDAC/Cassandra/DSE or an Apollo database at runtime.
-
-Contributors: A listing of contributors to this repository linked to their github profile
+Contributors: [Jorge Bay Gondra](https://github.com/jorgebay) and [Andrew Tolbert](https://github.com/tolbertam), copied from [here](https://github.com/datastax/nodejs-driver/blob/master/examples/mapper/mapper-insert-retrieve.js)
 
 ## Objectives
-A list of the top objectives that are being demonstrated by this sample
 
-e.g.
-* To demonstrate how to specify at runtime between a standard (DSE/DDAC/C*) client configuration and an Apollo configuration for the same application.
+* To demonstrate how to insert and retrieve data using the object mapper described in the documentation [here](https://docs.datastax.com/en/developer/nodejs-driver/4.3/features/mapper/)
   
 ## Project Layout
-A list of key files within this repo and a short 1-2 sentence description of why they are important to the project
 
-e.g.
-* app.js - The main application file which contains all the logic to switch between the configurations
+* app.js - The main application file which contains the example code for using the object mapper
 
 ## How this Sample Works
 A description of how this sample works and how it demonstrates the objectives outlined above
