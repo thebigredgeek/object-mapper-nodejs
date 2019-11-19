@@ -1,32 +1,34 @@
-# Using the Object Mapper in Node.js
-This example demonstrates how to use the object mapper in Node.js to insert and retrieve data from a Cassandra cluster.
+# Object Mapper in Node.js
+The [Node.js DataStax Driver](https://docs.datastax.com/en/developer/nodejs-driver/latest) comes with an [object mapper](https://docs.datastax.com/en/developer/nodejs-driver/latest/features/mapper/) that removes boilerplate of writing queries and lets you focus on your application objects. This example shows how to use the mapper to access Apache Cassandra™ in a Node.js application.
 
-Contributors: [Jorge Bay Gondra](https://github.com/jorgebay) and [Andrew Tolbert](https://github.com/tolbertam), copied from [here](https://github.com/datastax/nodejs-driver/blob/master/examples/mapper/mapper-insert-retrieve.js)
+Contributor(s): [Jorge Bay Gondra](https://github.com/jorgebay), [Andrew Tolbert](https://github.com/tolbertam) - derived from [here](https://github.com/datastax/nodejs-driver/blob/master/examples/mapper/mapper-insert-retrieve.js)
 
 ## Objectives
 
-* To provides a singlular example of how to insert and retrieve data using the object mapper described in the documentation [here](https://docs.datastax.com/en/developer/nodejs-driver/4.3/features/mapper/)
+* Demonstrate how to write and read data using the Node.js Driver's object mapper
   
 ## Project Layout
 
-* app.js - The main application file which contains the example code for using the object mapper
+* [app.js](app.js) - The main application file which contains the example code for using the object mapper
 
 ## How this Sample Works
-This example starts by first, creating a mapper instance that maps three tables in the `examples` keyspace.
+This example starts by creating a mapper instance that maps to three tables in the `examples` keyspace.
 * `users`
 * `user_videos`
 * `latest_videos`   
 
-
+It then uses that mapper instance to write and read data to / from the tables above.
 
 ## Setup and Running
 
 ### Prerequisites
 
 * Node.Js version 8
-* A Cassandra cluster with the connection information
+* A Cassandra cluster is running and accessible through the contacts points and data center
 
-**Note** This application defaults to connecting to a cluster on localhost with a local data center of `dc1`.  These parameters can be changed on line 6 of [app.js](app.js).
+**Note** This application defaults to connecting to a cluster on localhost with a local data center of `dc1`.  These parameters can be changed in [app.js](app.js) by modifying the following to your settings.
+
+`const client = new cassandra.Client({ contactPoints: ['127.0.0.1'], localDataCenter: 'dc1' });`
 
 ### Running
 To run this application use the following command:
