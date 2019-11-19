@@ -11,7 +11,7 @@ Contributor(s): [Jorge Bay Gondra](https://github.com/jorgebay), [Andrew Tolbert
 
 * [app.js](app.js) - The main application file which contains the example code for using the object mapper
 
-## How this Sample Works
+## How this Works
 This example starts by creating a mapper instance that maps to three tables in the `examples` keyspace.
 * `users`
 * `user_videos`
